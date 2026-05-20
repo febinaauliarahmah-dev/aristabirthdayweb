@@ -1,0 +1,734 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<title>Happy Birthday Arista 🎀</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body{
+  background:#fff6fb;
+  overflow-x:hidden;
+  font-family:'Poppins',sans-serif;
+  color:#8a2d5e;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+/* floating hearts */
+
+.hearts{
+  position:fixed;
+  inset:0;
+  overflow:hidden;
+  pointer-events:none;
+  z-index:0;
+}
+
+.heart{
+  position:absolute;
+  bottom:-100px;
+  opacity:.18;
+  animation:float linear infinite;
+}
+
+@keyframes float{
+  from{
+    transform:translateY(0) rotate(0deg);
+  }
+  to{
+    transform:translateY(-120vh) rotate(360deg);
+  }
+}
+
+/* hero */
+
+.hero{
+  min-height:100vh;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  padding:20px;
+  position:relative;
+  z-index:1;
+
+  background:
+  radial-gradient(circle at top,#ffd7ea 0%,#fff0f7 45%,#fff8fc 100%);
+}
+
+.hero h1{
+  font-size:clamp(3rem,9vw,7rem);
+  color:#ff4ea3;
+  font-family:'Dancing Script',cursive;
+  text-shadow:0 10px 30px rgba(255,78,163,.25);
+}
+
+.hero h2{
+  font-size:clamp(4rem,12vw,8rem);
+  font-family:'Dancing Script',cursive;
+  color:#7a2954;
+  margin-top:-10px;
+}
+
+.hero p{
+  margin-top:18px;
+  max-width:700px;
+  line-height:1.9;
+  color:#9b4671;
+}
+
+.scroll{
+  margin-top:40px;
+  animation:bounce 2s infinite;
+  letter-spacing:3px;
+  opacity:.6;
+  font-size:.8rem;
+}
+
+@keyframes bounce{
+  0%,100%{
+    transform:translateY(0);
+  }
+  50%{
+    transform:translateY(10px);
+  }
+}
+
+/* divider */
+
+.divider{
+  text-align:center;
+  padding:20px;
+  font-size:1.4rem;
+  opacity:.5;
+}
+
+/* section */
+
+section{
+  max-width:1200px;
+  margin:auto;
+  padding:80px 24px;
+  position:relative;
+  z-index:1;
+}
+
+.title{
+  text-align:center;
+  font-size:3.2rem;
+  font-family:'Dancing Script',cursive;
+  color:#ff4ea3;
+  margin-bottom:45px;
+}
+
+/* gallery */
+
+.gallery{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:24px;
+}
+
+.card{
+  background:white;
+  border-radius:24px;
+  overflow:hidden;
+  box-shadow:0 10px 30px rgba(255,78,163,.15);
+  transition:.35s;
+  cursor:pointer;
+}
+
+.card:hover{
+  transform:translateY(-10px) scale(1.03);
+}
+
+.card img{
+  width:100%;
+  height:400px;
+  object-fit:cover;
+  display:block;
+}
+
+.caption{
+  padding:15px;
+  text-align:center;
+  background:#ffe5f1;
+  font-family:'Dancing Script',cursive;
+  font-size:1.3rem;
+}
+
+/* video */
+
+.video-box{
+  max-width:850px;
+  margin:auto;
+  overflow:hidden;
+  border-radius:28px;
+  border:5px solid #ff9dcb;
+  box-shadow:0 15px 40px rgba(255,78,163,.15);
+}
+
+.video-box video{
+  width:100%;
+  display:block;
+}
+
+/* wish */
+
+.wish{
+  background:
+  linear-gradient(135deg,#ffe4f0,#fff7fb);
+
+  border:3px solid #ff9dcb;
+  border-radius:30px;
+  padding:60px 40px;
+  text-align:center;
+  box-shadow:0 15px 40px rgba(255,78,163,.12);
+  position:relative;
+  overflow:hidden;
+}
+
+.wish::before,
+.wish::after{
+  content:'🎀';
+  position:absolute;
+  font-size:8rem;
+  opacity:.06;
+}
+
+.wish::before{
+  top:-10px;
+  right:-10px;
+}
+
+.wish::after{
+  bottom:-10px;
+  left:-10px;
+}
+
+.wish p{
+  font-size:1.25rem;
+  line-height:2;
+  color:#7a2954;
+}
+
+.sign{
+  margin-top:30px;
+  font-size:2.2rem;
+  font-family:'Dancing Script',cursive;
+  color:#ff4ea3;
+}
+
+/* cake */
+
+.cake-section{
+  padding:80px 20px;
+  text-align:center;
+  background:#fff1f8;
+  position:relative;
+  z-index:1;
+}
+
+.cake-section h2{
+  font-size:3rem;
+  font-family:'Dancing Script',cursive;
+  color:#ff4ea3;
+}
+
+.cake-text{
+  margin-top:18px;
+  color:#be4787;
+}
+
+canvas{
+  margin-top:20px;
+  max-width:100%;
+  cursor:pointer;
+}
+
+/* footer */
+
+footer{
+  background:#ff4ea3;
+  color:white;
+  text-align:center;
+  padding:45px 20px;
+  position:relative;
+  z-index:1;
+}
+
+footer h3{
+  font-size:2rem;
+  font-family:'Dancing Script',cursive;
+}
+
+footer p{
+  margin-top:10px;
+  opacity:.8;
+  letter-spacing:2px;
+  font-size:.8rem;
+}
+
+/* music button */
+
+.music-btn{
+  position:fixed;
+  right:25px;
+  bottom:25px;
+  width:65px;
+  height:65px;
+  border-radius:50%;
+  border:none;
+  background:#ff4ea3;
+  color:white;
+  font-size:1.5rem;
+  cursor:pointer;
+  z-index:999;
+  box-shadow:0 10px 30px rgba(255,78,163,.35);
+}
+
+/* lightbox */
+
+.lightbox{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.92);
+  display:none;
+  justify-content:center;
+  align-items:center;
+  z-index:9999;
+}
+
+.lightbox.active{
+  display:flex;
+}
+
+.lightbox img{
+  max-width:90vw;
+  max-height:90vh;
+  border-radius:20px;
+  border:4px solid white;
+}
+
+.close{
+  position:absolute;
+  top:20px;
+  right:30px;
+  font-size:3rem;
+  color:white;
+  cursor:pointer;
+}
+
+/* confetti */
+
+.confetti{
+  position:fixed;
+  width:10px;
+  height:10px;
+  top:-20px;
+  animation:fall linear forwards;
+  z-index:9999;
+}
+
+@keyframes fall{
+  to{
+    transform:translateY(110vh) rotate(720deg);
+    opacity:0;
+  }
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- floating hearts -->
+
+<div class="hearts" id="hearts"></div>
+
+<!-- lightbox -->
+
+<div class="lightbox" id="lightbox">
+
+  <span class="close" onclick="closeLightbox()">✕</span>
+
+  <img id="lightboxImg">
+
+</div>
+
+<!-- music button -->
+
+<button class="music-btn" id="musicBtn">🎵</button>
+
+<!-- 
+UPLOAD FILE MP3 DENGAN NAMA:
+Jamrud_-_Selamat_Ulang_Tahun_(mp3.pm).mp3
+
+Lalu simpan file HTML ini di folder yang sama
+-->
+
+<audio id="birthdayMusic" loop>
+  <source src="Jamrud_-_Selamat_Ulang_Tahun_(mp3.pm).mp3" type="audio/mp3">
+</audio>
+
+<!-- HERO -->
+
+<div class="hero">
+
+  <h1>Happy Birthday</h1>
+
+  <h2>Arista 🎀</h2>
+
+  <p>
+    semoga semua urusan dipermudah,
+    rejeki berlimpah,
+    dan jadi anak yang sukses serta membanggakan kedua orang tua 💗
+  </p>
+
+  <div class="scroll">
+    SCROLL ↓
+  </div>
+
+</div>
+
+<div class="divider">🎀 💗 🎀 💗 🎀</div>
+
+<!-- cake -->
+
+<div class="cake-section">
+
+  <h2>tiup lilinnya dulu 🎂</h2>
+
+  <canvas id="cakeCanvas" width="320" height="320"></canvas>
+
+  <div class="cake-text">
+    klik kuenya ya ✨
+  </div>
+
+</div>
+
+<div class="divider">💗 🎀 💗 🎀 💗</div>
+
+<!-- gallery -->
+
+<section>
+
+  <h2 class="title">our memories 📸</h2>
+
+  <div class="gallery">
+
+    <div class="card"
+    onclick="openLightbox('WhatsApp Image 2026-05-19 at 14.12.19.jpeg')">
+
+      <img src="WhatsApp Image 2026-05-19 at 14.12.19.jpeg">
+
+      <div class="caption">
+        ice cream date 🍦
+      </div>
+
+    </div>
+
+    <div class="card"
+    onclick="openLightbox('WhatsApp Image 2026-05-19 at 14.12.18.jpeg')">
+
+      <img src="WhatsApp Image 2026-05-19 at 14.12.18.jpeg">
+
+      <div class="caption">
+        photobooth moments 🎞️
+      </div>
+
+    </div>
+
+    <div class="card"
+    onclick="openLightbox('WhatsApp Image 2026-05-19 at 14.12.18 (1).jpeg')">
+
+      <img src="WhatsApp Image 2026-05-19 at 14.12.18 (1).jpeg">
+
+      <div class="caption">
+        cute friendship 💗
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<!-- VIDEO -->
+
+<section>
+
+  <h2 class="title">special video 🎥</h2>
+
+  <div class="video-box">
+
+    <video controls autoplay muted loop>
+
+      <source
+      src="WhatsApp Video 2026-05-19 at 15.43.15.mp4"
+      type="video/mp4">
+
+    </video>
+
+  </div>
+
+</section>
+
+<!-- MESSAGE -->
+
+<section>
+
+  <h2 class="title">a little message 💌</h2>
+
+  <div class="wish">
+
+    <p>
+      “selamat ulang tahun arista,
+      pasti semua urusan dipermudah,
+      dan rejeki mu pasti berlimpah,
+      bakal jadi anak yg sukses dan membanggakan kedua orang tua,
+      take ur time! 💗”
+    </p>
+
+    <div class="sign">
+      — farbiebz 🎀
+    </div>
+
+  </div>
+
+</section>
+
+<footer>
+
+  <h3>made with love 💗</h3>
+
+  <p>FOR ARISTA ✨</p>
+
+</footer>
+
+<script>
+
+/* floating hearts */
+
+const hearts=document.getElementById('hearts');
+
+for(let i=0;i<35;i++){
+
+  const h=document.createElement('div');
+
+  h.className='heart';
+
+  h.innerHTML=['💗','💕','🎀','💖'][Math.floor(Math.random()*4)];
+
+  h.style.left=Math.random()*100+'vw';
+
+  h.style.fontSize=(20+Math.random()*35)+'px';
+
+  h.style.animationDuration=(8+Math.random()*8)+'s';
+
+  hearts.appendChild(h);
+
+}
+
+/* music */
+
+const birthdayMusic=document.getElementById('birthdayMusic');
+
+const musicBtn=document.getElementById('musicBtn');
+
+birthdayMusic.volume=0.4;
+
+let playing=false;
+
+musicBtn.addEventListener('click',()=>{
+
+  if(playing){
+
+    birthdayMusic.pause();
+
+    musicBtn.innerHTML='🎵';
+
+    playing=false;
+
+  }else{
+
+    birthdayMusic.play();
+
+    musicBtn.innerHTML='⏸';
+
+    playing=true;
+
+  }
+
+});
+
+/* lightbox */
+
+function openLightbox(src){
+
+  document.getElementById('lightbox')
+  .classList.add('active');
+
+  document.getElementById('lightboxImg')
+  .src=src;
+
+}
+
+function closeLightbox(){
+
+  document.getElementById('lightbox')
+  .classList.remove('active');
+
+}
+
+/* confetti */
+
+function confetti(){
+
+  for(let i=0;i<120;i++){
+
+    const c=document.createElement('div');
+
+    c.className='confetti';
+
+    c.style.left=Math.random()*100+'vw';
+
+    c.style.animationDuration=
+    (3+Math.random()*3)+'s';
+
+    c.style.width=
+    c.style.height=
+    (6+Math.random()*8)+'px';
+
+    c.style.background=
+    ['#ff4ea3','#ff9dcb','#ffd7ea','#ffffff']
+    [Math.floor(Math.random()*4)];
+
+    document.body.appendChild(c);
+
+    setTimeout(()=>{
+      c.remove();
+    },6000);
+
+  }
+
+}
+
+/* cake */
+
+const canvas=document.getElementById('cakeCanvas');
+
+const ctx=canvas.getContext('2d');
+
+let blown=false;
+
+function drawCake(){
+
+  ctx.clearRect(0,0,320,320);
+
+  // plate
+
+  ctx.fillStyle='#f4c6dc';
+
+  ctx.beginPath();
+
+  ctx.ellipse(160,250,120,30,0,0,Math.PI*2);
+
+  ctx.fill();
+
+  // cake
+
+  ctx.fillStyle='#ff8fc5';
+
+  ctx.fillRect(80,140,160,90);
+
+  ctx.fillStyle='#ffc9e3';
+
+  ctx.fillRect(95,110,130,40);
+
+  // cream
+
+  ctx.fillStyle='white';
+
+  for(let i=0;i<8;i++){
+
+    ctx.beginPath();
+
+    ctx.arc(100+i*16,140,10,0,Math.PI*2);
+
+    ctx.fill();
+
+  }
+
+  // candles
+
+  const xs=[115,160,205];
+
+  xs.forEach(x=>{
+
+    ctx.fillStyle='white';
+
+    ctx.fillRect(x-4,75,8,35);
+
+    if(!blown){
+
+      ctx.beginPath();
+
+      ctx.fillStyle='#ffb300';
+
+      ctx.ellipse(x,65,7,12,0,0,Math.PI*2);
+
+      ctx.fill();
+
+    }
+
+  });
+
+}
+
+drawCake();
+
+/* blow candles */
+
+canvas.addEventListener('click',()=>{
+
+  if(!blown){
+
+    blown=true;
+
+    drawCake();
+
+    confetti();
+
+    // AUTO PLAY HAPPY BIRTHDAY
+
+    birthdayMusic.play();
+
+    birthdayMusic.volume=0.4;
+
+    musicBtn.innerHTML='⏸';
+
+    playing=true;
+
+  }
+
+});
+
+</script>
+
+</body>
+</html>
